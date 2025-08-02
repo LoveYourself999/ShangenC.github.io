@@ -168,27 +168,17 @@ body::before {
 }
 
 .projects section {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.85)
-    ),
-    url("https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_9771.jpeg?raw=true");
-
-  background-size: cover;
-  background-position: center;
+  background: rgba(20, 20, 20, 0.95);
   border-radius: 10px;
-  padding: 2.5vh 5%;
-  color: #222;
-  transition: 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2vh 2vw;
+  transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .projects section:hover {
   transform: scale(1.03);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
-
 
 .section_title {
   font-size: 22px;
@@ -292,4 +282,10 @@ body::before {
 ::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 4px;
+}
+
+.project-highlight {
+  color: #c8ace3;
+  font-weight: 500;
+  line-height: 1.5;
 }
