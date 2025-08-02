@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
 :root {
-  --bg-color: #f2f2f2;
+  --bg-color: #df4b15;
   --text-color: rgb(137, 108, 200);
   --blog-gray-color: #666;
   --background-image: url("https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_9771.jpeg?raw=true");
-  --background-overlay-color: rgba(198, 126, 63, 0.258);
+  --background-overlay-color: rgba(197, 59, 29, 0.749);
 }
 
 
@@ -30,7 +30,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--background-overlay-color);
+  background-color: var(--background-image);
   z-index: -1;
 }
 
@@ -82,12 +82,12 @@ body::before {
 }
 
 #profile_img {
-  width: 180px;
-  height: 180px;
+  width: 280px;
+  height: 300px;
   border-radius: 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 }
 
 #username {
@@ -141,7 +141,7 @@ body::before {
 /* Main Display */
 #display {
   width: 63vw;
-  margin-left: 30vw;
+  margin-left: 33vw;
   padding: 4vh 3vw;
 }
 
@@ -258,7 +258,7 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background: rgba(255, 255, 255, 0.85); /* lighter overlay */
+    background: rgba(226, 89, 47, 0.85); /* lighter overlay */
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   }
@@ -320,6 +320,7 @@ body::before {
     padding: 5vh 5vw;
     padding-left: 5vw;
     margin-top: 2vh;
+    padding-left: 8vw;
   }
 
   .projects {
@@ -339,7 +340,7 @@ body::before {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     background: rgba(255, 255, 255, 0.95);
-    color: #000;
+    color: var(--text-color);
   }
 
   #blogs {
@@ -385,3 +386,13 @@ body::before {
   font-weight: 500;
   line-height: 1.5;
 }
+
+.section-heading-left {
+  font-size: 48px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 2vh;
+  text-align: left;
+  font-family: "Questrial", sans-serif;
+}
+
