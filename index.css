@@ -8,6 +8,15 @@
   --card-text: #ddd;
   --background-image: url("https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_9771.jpeg?raw=true");
   --background-overlay-color: rgb(198, 59, 17);
+  --bg-size: cover;           /* try: contain | 120% auto | 100% 100% */
+  --profile-bg-size: cover;   /* separate control for the sidebar image */
+
+  --profile-img-size: clamp(120px, 12vw, 280px);
+  --profile-img-radius: 50%;           /* 50% = circle, 16px = rounded square, 0 = square */
+  --profile-img-fill: cover;            /* cover | contain */
+  --profile-img-position: center;       /* center | top | 50% 40% ... */
+  --profile-img-border: 0;              /* e.g., 3px solid rgba(255,255,255,.25) */
+  --profile-img-shadow: 0 8px 24px rgba(0,0,0,.25);
 }
 
 /* ---------- Base ---------- */
@@ -19,7 +28,7 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   color: var(--text-color);
-  background: var(--background-image) center center / cover no-repeat fixed;
+  background: var(--background-image) center center / var(--bg-size) no-repeat fixed;
   position: relative;
 }
 
@@ -78,7 +87,7 @@ body::before {
   left: 0;
   right: auto;
   color: #fff !important;
-  background-size: cover;
+  background-size: var(--profile-bg-size);
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -88,26 +97,33 @@ body::before {
   box-sizing: border-box;
 }
 #profile_img {
-  width: 280px; height: 300px;
-  border-radius: 50%;
-  background-size: cover; background-repeat: no-repeat;
-  margin-bottom: 4vh;
+  width: var(--profile-img-size) !important;
+  aspect-ratio: 1 / 1;                  /* keeps it perfectly square; height auto-calculates */
+  height: auto !important;
+  border-radius: var(--profile-img-radius) !important;
+
+  background-size: var(--profile-img-fill) !important;
+  background-position: var(--profile-img-position) !important;
+
+  border: var(--profile-img-border);
+  box-shadow: var(--profile-img-shadow);
 }
-#username { font-size: 18px; font-weight: bold; }
+
+#username { font-size: 16px; font-weight: bold; margin: 2vh 0 2vh 0; }
 #username span { font-size: 24px; display: block; }
-#userbio { font-size: 20px; font-family: "Questrial", sans-serif; margin: 1vh 0 2vh 0; }
+#userbio { font-size: 20px; font-family: "Questrial", sans-serif; margin: 2vh 0 2vh 0; }
 #about { font-size: 16px; font-family: "Questrial", sans-serif; }
 #about span { margin: 1vh 0; display: block; }
 #about a, #username a { color: #fff !important; text-decoration: none; font-weight: bold; }
 #about a:hover, #username a:hover { text-decoration: underline; }
-.socials { margin-top: 2vh; }
+.socials { margin-top: 3vh; }
 .socials span a { font-size: 20px; color: #fff; margin-right: 1vw; }
 
 /* ---------- Main Display (right column) ---------- */
 #display {
   width: 63vw;
   margin-left: 33vw;        /* reserves space for fixed profile */
-  padding: 4vh 3vw;
+  padding: 5vh 3vw;
   box-sizing: border-box;
 }
 #display h1,
@@ -155,9 +171,8 @@ body::before {
 @media (max-width: 800px) {
   /* Profile stacked */
   #profile {
-    width: 100vw; height: auto; position: relative;
-    padding: 5vh 5vw; text-align: center;
-    /* background: rgba(226, 89, 47, 0.85); */
+    width: auto; height: auto; position: relative;
+    padding: 1vh 1vw; text-align: center;
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 20px rgba(0,0,0,0.1);
   }
@@ -165,25 +180,26 @@ body::before {
     width: 120px; height: 120px; border-radius: 50%;
     margin: 0 auto 2vh auto; background-size: cover !important; background-position: center;
   }
-  #username span { font-size: 22px; margin-top: 1vh; }
-  #username a { font-size: 16px; display: inline-block; margin-top: 1vh; color: #1e90ff !important; }
-  #userbio { font-size: 16px; margin: 2vh 0; }
-  #about { font-size: 14px; margin-top: 2vh; }
+  #username span { font-size: 22px;}
+  #username a { font-size: 15px; display: inline-block; color: #1e90ff !important; }
+  #userbio { font-size: 16px; margin: 1vh 0; }
+  #about { font-size: 12px; margin-top: 1vh; }
   #about span { margin: 1vh 0; word-break: break-word; }
-  .socials { margin-top: 2vh; }
+  .socials { margin-top: 1vh; }
   .socials span a { font-size: 22px; color: #333; }
 
   /* Display full width */
   #display {
     width: 100vw;
-    padding: 5vh 5vw;
+    padding: 1vh 2vw;
     margin: 0;
   }
+  
 
   .projects { display: block; margin-left: 0; }
   .projects a { width: 100%; margin-bottom: 3vh; display: block; }
   .projects section {
-    width: 100% !important;
+    width: 90% !important;
     padding: 4vh 5vw; border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     background: rgba(255, 255, 255, 0.95); color: var(--text-color);
@@ -193,6 +209,36 @@ body::before {
   #blog_section { margin-top: 5vh; }
   #footer { padding: 4vh 0; font-size: 14px; text-align: center; }
   body { overflow-x: hidden; background-color: #f4f4f4; }
+
+  .topnav { border-bottom: 1px solid rgba(255,255,255,.12); }
+  .topnav-inner {
+    max-width: none;
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  /* Brand */
+  .brand img { width: 22px; height: 22px; }
+  .brand span { font-size: 14px; }
+
+  /* Links row becomes skinny + scrollable if it overflows */
+  .nav-links {
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;       /* Firefox */
+  }
+  .nav-links::-webkit-scrollbar { display: none; } /* WebKit */
+
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    line-height: 1;
+  }
+  .nav-link i { font-size: 14px; }
+
 }
 
 /* Scrollbar */
