@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Experience — LoveYourself999</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/54390035?v=4" type="image/png"/>
+
+  <style>
+    /* Top navbar */
+    .topnav {
+      position: sticky; top: 0; z-index: 1000;
+      background: #ffffffcc; backdrop-filter: saturate(1.1) blur(6px);
+      border-bottom: 1px solid #eee;
+    }
+    .topnav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 10px 16px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px; text-decoration: none; color: #111;
+      font-weight: 700;
+    }
+    .brand img { width: 28px; height: 28px; border-radius: 50%; }
+    .nav-links { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav-link, .nav-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 12px; border-radius: 10px; text-decoration: none;
+      color: #222; border: 1px solid #eee; background: #fff;
+    }
+    .nav-link:hover, .nav-btn:hover { background: #f7f7f7; }
+    .nav-link.active { border-color: #0d6efd; box-shadow: 0 0 0 2px rgba(13,110,253,.15) inset; }
+    @media (max-width: 720px) { .topnav-inner { gap: 8px; } }
+  </style>
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <header class="topnav" role="navigation" aria-label="Primary">
+    <div class="topnav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="https://avatars.githubusercontent.com/u/54390035?v=4" alt="Avatar"/>
+        <span>LoveYourself999</span>
+      </a>
+
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html"><i class="fas fa-folder-open"></i> Projects</a>
+        <a class="nav-link active" href="experience.html"><i class="fas fa-briefcase"></i> Experience</a>
+        <a class="nav-link" href="#blog_section"><i class="fas fa-pen"></i> Blog</a>
+        <a class="nav-link" href="#footer"><i class="fas fa-envelope-open-text"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Profile Sidebar (same as index.html) -->
+  
+  <div id="profile">
+    <h1 class="section-heading-left">About Me</h1>
+    <div id="profile_img"
+      style="background: url('https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_1854.jpeg?raw=true') center / cover no-repeat;">
+    </div>
+    <div id="username">
+      <span style="display:block;">Shangen (Shawn) Chen</span>
+      <a href="https://github.com/LoveYourself999">@LoveYourself999</a>
+    </div>
+    <div id="userbio" style="display:block;">
+      Master's student passionate about AI, Software Engineering, and Data Science.
+    </div>
+    <div id="about">
+      <span><i class="fas fa-envelope"></i> &nbsp; <a href="mailto:shangenchendd@outlook.com">shangenchendd@outlook.com</a></span>
+      <span><i class="fas fa-user-graduate"></i> &nbsp; Master of Applied Data Science, University of Victoria | BSc in Computer Science, York University</span>
+      <span><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; Victoria, BC, Canada</span>
+      <span><i class="fas fa-link"></i> &nbsp; <a href="https://www.linkedin.com/in/shangen-chen/">www.linkedin.com/in/shangen-chen/</a></span>
+      <span><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Looking for co-op and full-time opportunities in data and software dev</span>
+      <div class="socials">
+        <span>
+          <a href="https://www.linkedin.com/in/shangen-chen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/LoveYourself999" target="_blank"><i class="fab fa-github"></i></a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Display area -->
+  <div id="display">
+    <main id="display-main">
+      <div id="experience">
+        <h1>Experience</h1>
+        <div class="projects" id="experience_section">
+
+          <section>
+            <div class="section_title">Junior QA Analyst Co-op — Journal Technologies</div>
+            <div class="about_section">
+              <span class="project-highlight" style="display:block;">
+                Built test cases, performed QA testing for reports/dashboards, and documented as-built technical details.
+              </span>
+            </div>
+            <div class="bottom_section">
+              <span style="display:inline-block;"><i class="fas fa-calendar"></i>&nbsp; May 2025 – Aug 2025</span>
+            </div>
+          </section>
+
+          <section>
+            <div class="section_title">Teaching Assistant — University of Victoria</div>
+            <div class="about_section">
+              <span class="project-highlight" style="display:block;">
+                Supported Applied Data Science coursework, facilitated labs, mentored students on Python/SQL/ML.
+              </span>
+            </div>
+            <div class="bottom_section">
+              <span style="display:inline-block;"><i class="fas fa-calendar"></i>&nbsp; Jan 2025 – Apr 2025</span>
+            </div>
+          </section>
+
+          <!-- Add more experience sections here -->
+
+        </div>
+      </div>
+
+      <div id="footer" style="margin-top: 28px;">
+        <a href="index.html#work"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- MagicGrid -->
+  <script>
+    const magicExperienceGrid = new MagicGrid({
+      container: "#experience_section",
+      animate: false,
+      gutter: 30,
+      static: true,
+      useMin: false,
+      maxColumns: 2,
+      useTransform: true
+    });
+    $("document").ready(() => {
+      magicExperienceGrid.listen();
+    });
+  </script>
+
+</body>
+</html>

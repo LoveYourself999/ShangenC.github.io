@@ -2,14 +2,15 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
 :root {
-  --bg-color: #df4b15;
-  --text-color: rgb(137, 108, 200);
-  --blog-gray-color: #666;
+
+  --card-bg: rgba(20, 20, 20, 0.95);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-text: #ddd;
   --background-image: url("https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_9771.jpeg?raw=true");
-  --background-overlay-color: rgba(197, 59, 29, 0.749);
+  --background-overlay-color: rgb(198, 59, 17);
 }
 
-
+/* ---------- Base ---------- */
 body {
   margin: 0;
   padding: 0;
@@ -22,129 +23,93 @@ body {
   position: relative;
 }
 
-
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background-color: var(--background-image);
   z-index: -1;
 }
 
-
+/* Loading (optional) */
 #loading {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background: var(--bg-color);
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw; height: 100vh;
+  position: fixed; background: var(--bg-color);
+  z-index: 999; display: flex; justify-content: center; align-items: center;
 }
-
 #spinner {
   animation: rotate 0.5s infinite linear;
-  width: 50px;
-  height: 50px;
+  width: 50px; height: 50px;
   border: 2px solid var(--bg-color);
   border-bottom: 2px solid var(--text-color);
   border-radius: 50%;
 }
+@keyframes rotate { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* ---------- Top Navbar ---------- */
+.topnav {
+  position: sticky; top: 0; z-index: 1000;
+  background: #ffffffcc;
+  backdrop-filter: saturate(1.1) blur(6px);
+  border-bottom: 1px solid #eee;
 }
+.topnav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 18px 26px;
+  display: flex; align-items: center; gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #111; font-weight: 700; }
+.brand img { width: 28px; height: 28px; border-radius: 50%; }
+.nav-links { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+.nav-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 12px; border-radius: 10px;
+  text-decoration: none; color: #222; border: 1px solid #eee; background: #fff;
+}
+.nav-link:hover { background: #f7f7f7; }
+.nav-link.active { border-color: rgb(137, 108, 200); box-shadow: 0 0 0 2px rgb(137, 108, 200) inset; }
 
-/* Profile Panel */
+/* ---------- Profile (fixed left) ---------- */
 #profile {
   width: 28vw;
   padding: 4vh 3vw;
   height: 92vh;
   position: fixed;
+  left: 0;
+  right: auto;
   color: #fff !important;
-  background: var(--background-image) center center;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  backdrop-filter: brightness(0.6);
+  backdrop-filter: brightness(0.86);
+  box-sizing: border-box;
 }
-
 #profile_img {
-  width: 280px;
-  height: 300px;
+  width: 280px; height: 300px;
   border-radius: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: cover; background-repeat: no-repeat;
   margin-bottom: 4vh;
 }
+#username { font-size: 18px; font-weight: bold; }
+#username span { font-size: 24px; display: block; }
+#userbio { font-size: 20px; font-family: "Questrial", sans-serif; margin: 1vh 0 2vh 0; }
+#about { font-size: 16px; font-family: "Questrial", sans-serif; }
+#about span { margin: 1vh 0; display: block; }
+#about a, #username a { color: #fff !important; text-decoration: none; font-weight: bold; }
+#about a:hover, #username a:hover { text-decoration: underline; }
+.socials { margin-top: 2vh; }
+.socials span a { font-size: 20px; color: #fff; margin-right: 1vw; }
 
-#username {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#username span {
-  font-size: 24px;
-  display: block;
-}
-
-#userbio {
-  font-size: 20px;
-  font-family: "Questrial", sans-serif;
-  margin: 1vh 0 2vh 0;
-}
-
-#about {
-  font-size: 16px;
-  font-family: "Questrial", sans-serif;
-}
-
-#about span {
-  margin: 1vh 0;
-  display: block;
-}
-
-#about a,
-#username a {
-  color: #fff !important;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#about a:hover,
-#username a:hover {
-  text-decoration: underline;
-}
-
-.socials {
-  margin-top: 2vh;
-}
-
-.socials span a {
-  font-size: 20px;
-  color: #fff;
-  margin-right: 1vw;
-}
-
-/* Main Display */
+/* ---------- Main Display (right column) ---------- */
 #display {
   width: 63vw;
-  margin-left: 33vw;
+  margin-left: 33vw;        /* reserves space for fixed profile */
   padding: 4vh 3vw;
+  box-sizing: border-box;
 }
-
 #display h1,
 #blog-display h1 {
   font-size: 48px;
@@ -156,243 +121,85 @@ body::before {
   -webkit-text-fill-color: #fff;
 }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.projects a {
-  width: calc(50% - 20px);
-  text-decoration: none;
-}
-
+/* Cards */
+.projects { display: flex; flex-wrap: wrap; gap: 20px; }
+.projects a { width: calc(50% - 30px); text-decoration: none; }
 .projects section {
-  background: rgba(20, 20, 20, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border-radius: 10px;
   padding: 2vh 2vw;
   transition: 0.3s;
+  backdrop-filter: brightness(0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
+.projects section:hover { transform: scale(1.03); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); }
 
-.projects section:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
+.section_title { font-size: 22px; font-weight: bold; margin-bottom: 1vh; color: rgb(137, 108, 200); }
+.about_section { font-size: 16px; font-family: "Questrial", sans-serif; margin-bottom: 1vh; color: rgba(137, 108, 200,0.5); }
+.bottom_section span { font-size: 14px; margin-right: 15px; color: rgb(137, 108, 200);}
 
-.section_title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 1vh;
-}
+/* Blog grid */
+#blog_section, [data-route="blog"] { margin-top: 5vh; }
+#blogs { columns: 2; column-gap: 2vw; }
+#blogs section { background: #ffffffcf; color: var(--text-color); border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 10px; transition: 0.3s; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); }
+#blogs section:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(57, 88, 137, 0.1); }
+#blogs section img { width: 100%; height: auto; display: block; }
+.blog_container { padding: 1.5vh 1.5vw; }
 
-.about_section {
-  font-size: 16px;
-  font-family: "Questrial", sans-serif;
-  margin-bottom: 1vh;
-  color: #ccc;
-}
+/* Footer */
+#footer { margin-top: 6vh; color: rgb(118, 80, 201); padding: 4vh 0;  font-family: "Questrial", sans-serif; }
+#footer a { color: rgba(255, 255, 255, 0.96); text-decoration: none; font-weight: bold; }
 
-.bottom_section span {
-  font-size: 14px;
-  margin-right: 15px;
-}
-
-#blog_section {
-  margin-top: 5vh;
-}
-
-#blogs {
-  columns: 2;
-  column-gap: 2vw;
-}
-
-.projects section,
-#blogs section {
-  background: #ffffffcf;
-  color: var(--text-color);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-  transition: 0.3s;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-}
-
-.projects section:hover,
-#blogs section:hover {
-  transform: scale(1.2);
-  box-shadow: 0 8px 20px rgba(57, 88, 137, 0.1);
-}
-
-
-#blogs section img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.blog_container {
-  padding: 1.5vh 1.5vw;
-}
-
-#footer {
-  margin-top: 6vh;
-  padding: 4vh 0;
-  text-align: center;
-  font-family: "Questrial", sans-serif;
-}
-
-#footer a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
+/* ---------- Mobile ---------- */
 @media (max-width: 800px) {
-  /* Profile section becomes stacked and centered */
+  /* Profile stacked */
   #profile {
-    width: 100vw;
-    height: auto;
-    position: relative;
-    padding: 5vh 5vw;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background: rgba(226, 89, 47, 0.85); /* lighter overlay */
+    width: 100vw; height: auto; position: relative;
+    padding: 5vh 5vw; text-align: center;
+    /* background: rgba(226, 89, 47, 0.85); */
     backdrop-filter: blur(8px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
   }
-
   #profile_img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto 2vh auto;
-    background-size: cover !important;
-    background-position: center;
+    width: 120px; height: 120px; border-radius: 50%;
+    margin: 0 auto 2vh auto; background-size: cover !important; background-position: center;
   }
+  #username span { font-size: 22px; margin-top: 1vh; }
+  #username a { font-size: 16px; display: inline-block; margin-top: 1vh; color: #1e90ff !important; }
+  #userbio { font-size: 16px; margin: 2vh 0; }
+  #about { font-size: 14px; margin-top: 2vh; }
+  #about span { margin: 1vh 0; word-break: break-word; }
+  .socials { margin-top: 2vh; }
+  .socials span a { font-size: 22px; color: #333; }
 
-  #username span {
-    font-size: 22px;
-    display: block;
-    margin-top: 1vh;
-  }
-
-  #username a {
-    font-size: 16px;
-    display: inline-block;
-    margin-top: 1vh;
-    color: #1e90ff !important;
-  }
-
-  #userbio {
-    font-size: 16px;
-    margin: 2vh 0;
-  }
-
-  #about {
-    font-size: 14px;
-    margin-top: 2vh;
-  }
-
-  #about span {
-    margin: 1vh 0;
-    display: block;
-    word-break: break-word;
-  }
-
-  .socials {
-    margin-top: 2vh;
-  }
-
-  .socials span {
-    margin-right: 3vw;
-  }
-
-  .socials span a {
-    font-size: 22px;
-    color: #333;
-  }
-
-  /* Main display becomes full width */
+  /* Display full width */
   #display {
     width: 100vw;
     padding: 5vh 5vw;
-    padding-left: 5vw;
-    margin-top: 2vh;
-    padding-left: 8vw;
+    margin: 0;
   }
 
-  .projects {
-    display: block;
-    margin-left: 0;
-  }
-
-  .projects a {
-    width: 100%;
-    margin-bottom: 3vh;
-    display: block;
-  }
-
+  .projects { display: block; margin-left: 0; }
+  .projects a { width: 100%; margin-bottom: 3vh; display: block; }
   .projects section {
     width: 100% !important;
-    padding: 4vh 5vw;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--text-color);
+    padding: 4vh 5vw; border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.95); color: var(--text-color);
   }
 
-  #blogs {
-    columns: 1;
-  }
-
-  #blogs section {
-    width: 100%;
-  }
-
-  #blog_section {
-    margin-top: 5vh;
-  }
-
-  #footer {
-    padding: 4vh 0;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  body {
-    overflow-x: hidden;
-    background-color: #f4f4f4;
-  }
+  #blogs { columns: 1; }
+  #blog_section { margin-top: 5vh; }
+  #footer { padding: 4vh 0; font-size: 14px; text-align: center; }
+  body { overflow-x: hidden; background-color: #f4f4f4; }
 }
 
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background-color: #888; border-radius: 4px; }
 
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
-}
-
-.project-highlight {
-  color: #c8ace3;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.section-heading-left {
-  font-size: 48px;
-  font-weight: 800;
-  margin-top: 0;
-  margin-bottom: 2vh;
-  text-align: left;
-  font-family: "Questrial", sans-serif;
-}
-
+/* Extras */
+.project-highlight { color: #c8ace3; font-weight: 500; line-height: 1.5; }
+.section-heading-left { font-size: 48px; font-weight: 800; margin: 0 0 2vh 0; text-align: left; font-family: "Questrial", sans-serif; }

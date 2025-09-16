@@ -1,231 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LoveYourself999</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/54390035?v=4" type="image/png">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>LoveYourself999</title>
+
+  <!-- Icons & Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+
+  <!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/54390035?v=4" type="image/png"/>
 </head>
 
-  <!-- Profile Sidebar -->
-<div id="profile">
+<body>
+
+  <!-- Top Navbar -->
+  <header class="topnav" role="navigation" aria-label="Primary">
+    <div class="topnav-inner">
+      <a class="brand" href="#projects" aria-label="Home">
+        <img src="https://avatars.githubusercontent.com/u/54390035?v=4" alt="Avatar"/>
+        <span>Shawn Chen</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+        <a class="nav-link" href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+        <a class="nav-link" href="#education"><i class="fas fa-user-graduate"></i> Education</a>
+        <a class="nav-link" href="#contact"><i class="fas fa-envelope-open-text"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Profile Sidebar (static) -->
+  <div id="profile">
     <h1 class="section-heading-left">About Me</h1>
-    <div id="profile_img" style="background: url('https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_1854.jpeg?raw=true') center / cover no-repeat;"></div>
+    <div id="profile_img"
+      style="background: url('https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_1854.jpeg?raw=true') center / cover no-repeat;">
+    </div>
     <div id="username">
       <span style="display:block;">Shangen (Shawn) Chen</span>
-      <a href="https://github.com/LoveYourself999">@LoveYourself999</a>
+      <a href="https://github.com/LoveYourself999" target="_blank"><i class="fab fa-github"></i>LoveYourself999</a>
     </div>
     <div id="userbio" style="display:block;">
       Master's student passionate about AI, Software Engineering, and Data Science.
     </div>
     <div id="about">
-      <span><i class="fas fa-envelope"></i> &nbsp; <a href="mailto:shangenchendd@outlook.com">shangenchendd@outlook.com</a></span>
-      <span><i class="fas fa-user-graduate"></i> &nbsp; Master of Applied Data Science, University of Victoria | BSc in Computer Science, York University</span>
       <span><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; Victoria, BC, Canada</span>
-      <span><i class="fas fa-link"></i> &nbsp; <a href="https://www.linkedin.com/in/shangen-chen/">www.linkedin.com/in/shangen-chen/</a></span>
+      <span><i class="fas fa-envelope"></i> &nbsp; <a href="mailto:shangenchendd@outlook.com">shangenchendd@outlook.com</a></span>
+      <span><i class="fab fa-linkedin-in"></i> &nbsp; <a href="https://www.linkedin.com/in/shangen-chen/" target="_blank">www.linkedin.com/in/shangen-chen/</a></span>
       <span><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Looking for co-op and full-time opportunities in data and software dev</span>
       <div class="socials">
-        <span><a href="https://www.linkedin.com/in/shangen-chen/" target="_blank"><i class="fab fa-linkedin-in"></i><a href="https://github.com/LoveYourself999" target="_blank">
-            <i class="fab fa-github"></i></a></span>
+        <span>
+          <a href="https://www.linkedin.com/in/shangen-chen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/LoveYourself999" target="_blank"><i class="fab fa-github"></i></a>
+        </span>
       </div>
     </div>
   </div>
 
+  <!-- Right-side Display (SPA views) -->
   <div id="display">
-      <div id="work" >
-        <h1>Projects</h1>
-        <div class="projects" id="work_section">
-                        </a>
-                        <a href="https://github.com/cncf-tags/cloud-native-ai" target="_blank">
-                        <section>
-                            <div class="section_title">cloud-native-ai</div>
-                            <div class="about_section">
-                                <span class="project-highlight" style="display:block;">
-                                    AI-powered Next.js dashboard that uses LangChain + GPT-4 to automatically summarize and visualize CNCF conference videos.
-                                  </span>                                  
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript, Python</span>
-                            </div>
-                        </section>
-                        </a>
-                        </a>
-                        <a href="https://github.com/lu6644/Course_Planner" target="_blank">
-                        <section>
-                            <div class="section_title">Course_Planner</div>
-                            <div class="about_section">
-                                <span class="project-highlight" style="display:block;">
-                                    Android mobile application to help students plan their academic courses efficiently.
-                                  </span>   
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Java</span>
-                            </div>
-                        </section>
-                        <a href="https://github.com/LoveYourself999/End-to-End-MLProject" target="_blank">
-                        <section>
-                            <div class="section_title">End-to-End-ML Project</div>
-                            <div class="about_section">
-                                <span class="project-highlight" style="display:block;">
-                                    Machine Learning models evauation for ICU admission risk prediction in Canada using COVID-19 patient data. 
-                                  </span>  
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Python</span>
-                            </div>
-                        </section>
-                        <a href="https://github.com/Winni731/HawkHack_my-app" target="_blank">
-                            <section>
-                                <div class="section_title">HawkHack_my-app</div>
-                                <div class="about_section">
-                                    <span class="project-highlight" style="display:block;">
-                                        HawkHack notebook project that supports typewriting and audio inputs, transfer audio input to strings by using Assembly AI, returns sentiment analysis
-                                      </span>                            </div>
-                                <div class="bottom_section">
-                                    <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript</span>
-                                </div>
-                            </section>
-                            </a>
-                        <a href="https://github.com/LoveYourself999/GitCluster" target="_blank">
-                        <section>
-                            <div class="section_title">GitCluster</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Jupyter Notebook</span>
-                            </div>
-                        </section>
 
-                        <a href="https://github.com/LoveYourself999/DataVisualization" target="_blank">
-                        <section>
-                            <div class="section_title">DataVisualization</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Java</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/LoveYourself999/EECS3401_A2" target="_blank">
-                        <section>
-                            <div class="section_title">EECS3401_A2</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Jupyter Notebook</span>
-                            </div>
-                        </section>
-                        <a href="https://github.com/LoveYourself999/CSC501" target="_blank">
-                        <section>
-                            <div class="section_title">CSC501</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Jupyter Notebook</span>
-                            </div>
-                        </section>
-                        </a>
-                        </a>
-                        <a href="https://github.com/LoveYourself999/Android-Studio-Codes" target="_blank">
-                        <section>
-                            <div class="section_title">Android-Studio-Codes</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Java</span>
-                            </div>
-                        </section>
-                        </div>
+    <!-- Projects view -->
+    <section id="view-projects" data-route="projects">
+      <h1>Projects</h1>
+      <div class="projects" id="work_section">
+
+        <a href="https://github.com/cncf-tags/cloud-native-ai" target="_blank">
+          <section>
+            <div class="section_title">cloud-native-ai</div>
+            <div class="about_section">
+              <span class="project-highlight" style="display:block;">
+                AI-powered Next.js dashboard that uses LangChain + GPT-4 to automatically summarize and visualize CNCF conference videos.
+              </span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; JavaScript, Python</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/lu6644/Course_Planner" target="_blank">
+          <section>
+            <div class="section_title">Course_Planner</div>
+            <div class="about_section">
+              <span class="project-highlight" style="display:block;">
+                Android mobile application to help students plan their academic courses efficiently.
+              </span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; Java</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/LoveYourself999/End-to-End-MLProject" target="_blank">
+          <section>
+            <div class="section_title">End-to-End-ML Project</div>
+            <div class="about_section">
+              <span class="project-highlight" style="display:block;">
+                Machine Learning models evaluation for ICU admission risk prediction in Canada using COVID-19 patient data.
+              </span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; Python</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/Winni731/HawkHack_my-app" target="_blank">
+          <section>
+            <div class="section_title">HawkHack_my-app</div>
+            <div class="about_section">
+              <span class="project-highlight" style="display:block;">
+                Notebook app supporting typing + audio (AssemblyAI to text) with sentiment analysis.
+              </span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; JavaScript</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/LoveYourself999/GitCluster" target="_blank">
+          <section>
+            <div class="section_title">GitCluster</div>
+            <div class="about_section">
+              <span style="display:none;">undefined</span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; Jupyter Notebook</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/LoveYourself999/DataVisualization" target="_blank">
+          <section>
+            <div class="section_title">DataVisualization</div>
+            <div class="about_section">
+              <span style="display:none;">undefined</span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; Java</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/LoveYourself999/EECS3401_A2" target="_blank">
+          <section>
+            <div class="section_title">EECS3401_A2</div>
+            <div class="about_section">
+              <span style="display:none;">undefined</span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; Jupyter Notebook</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/LoveYourself999/CSC501" target="_blank">
+          <section>
+            <div class="section_title">CSC501</div>
+            <div class="about_section">
+              <span style="display:none;">undefined</span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; Jupyter Notebook</span>
+            </div>
+          </section>
+        </a>
+
+        <a href="https://github.com/LoveYourself999/Android-Studio-Codes" target="_blank">
+          <section>
+            <div class="section_title">Android-Studio-Codes</div>
+            <div class="about_section">
+              <span style="display:none;">undefined</span>
+            </div>
+            <div class="bottom_section">
+              <span><i class="fas fa-code"></i>&nbsp; Java</span>
+            </div>
+          </section>
+        </a>
+
       </div>
-      <div id="forks" style="display:none;">
-        <h1>Forks.</h1>
-        <div class="projects" id="forks_section"></div>
-      </div>
-      <div id="blog_section">
-        <h1>Blog.</h1>
-        <div id="blogs"></div>
-      </div>
-      <div id="footer">
-        <a href="https://github.com/imfunniee" target="_blank"></a>
-      </div>
+    </section>
+
+    <!-- Experience view -->
+    <!-- Experience view -->
+<section id="view-experience" data-route="experience" style="display:none">
+    <h1>Experience</h1>
+    <div class="projects" id="experience_section">
+  
+      <section>
+        <div class="section_title">Engineering Research Assistant Co-op — Applied Energy Consulting Inc.</div>
+        <div class="about_section">
+          <ul>
+            <li>Processed and validated engineering datasets using Python and Power BI, ensuring consistency of equations, units, and tabular outputs across digitized technical reports.</li>
+            <li>Converted and structured reports into HTML/CSS web-ready formats, applying semantic markup, accessibility standards, and consistent formatting of tables, charts, and diagrams.</li>
+          </ul>
+        </div>
+        <div class="bottom_section">
+          <span><i class="fas fa-calendar"></i> Sep 2025 – Dec 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+        </div>
+      </section>
+  
+      <section>
+        <div class="section_title">Teaching Assistant — University of Victoria</div>
+        <div class="about_section">
+          <ul>
+            <li>Lab TA for Algorithms and Software Architecture courses. Topics includes (SDLC, algorithms, design patterns); mentored student teams on project development and algorithm implementation.</li>
+            <li>Assessed exams, projects, and assignments; provided individualized support, strengthening communication and documentation review skills.</li>
+          </ul>
+        </div>
+        <div class="bottom_section">
+          <span><i class="fas fa-calendar"></i> Sep 2024 – Apr 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> Victoria, BC</span>
+        </div>
+      </section>
+  
+      <section>
+        <div class="section_title">Software Engineer Intern — SZC Group</div>
+        <div class="about_section">
+          <ul>
+            <li>Developed and maintained a CRM system using Django (Python) and React, implementing automation for email campaigns and scheduling.</li>
+            <li>Collaborated in an agile team; used Git and Docker to deploy and optimize scalable features for customer operations.</li>
+          </ul>
+        </div>
+        <div class="bottom_section">
+          <span><i class="fas fa-calendar"></i> Mar 2024 – Jun 2024</span>
+          <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+        </div>
+      </section>
+  
     </div>
-    <script type="text/javascript">
-      setTimeout(function() {
-        document.getElementById("loading").classList.add("animated");
-        document.getElementById("loading").classList.add("fadeOut");
-        setTimeout(function() {
-          document.getElementById("loading").classList.remove("animated");
-          document.getElementById("loading").classList.remove("fadeOut");
-          document.getElementById("loading").style.display = "none";
-        }, 800);
-      }, 1500);
-      $.getJSON("blog.json", function(blog) {
-        blog = blog || [];
-        if (blog.length == 0) {
-          return (document.getElementById("blog_section").style.display =
-            "none");
-        }
-        for (var i = 0; i < blog.length; i++) {
-          $("#blogs").append(`
-            <a href="./blog/${blog[i].url_title}/" target="_blank">
-                <section>
-                    <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
-                    <div class="blog_container">
-                        <div class="section_title">${blog[i].title}</div>
-                        <div class="about_section">
-                            ${blog[i].sub_title}
-                        </div>
-                    </div>
-                </section>
-            </a>
-            `);
-        }
-      }).fail(function() {
-        return (document.getElementById("blog_section").style.display = "none");
-      });
-    </script>
-
-    <script>
-      const magicProjectsGrid = new MagicGrid({
-        container: "#work_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
-
-      const magicForksGrid = new MagicGrid({
-        container: "#forks_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
-
-      $("document").ready(() => {
-        magicProjectsGrid.listen();
-        magicForksGrid.listen();
-      });
-    </script>
+  </section>
   
 
-</body></html>
+    <!-- Education view -->
+    <section id="view-education" data-route="education" style="display:none">
+      <h1>Education</h1>
+      <div class="projects" id="education_section">
+        <section>
+          <div class="section_title"><i class="fas fa-user-graduate"></i> Master of Applied Data Science (MADS)</div>
+          <div class="about_section">
+            <span class="project-highlight" style="display:block;">
+            University of Victoria, Victoria, BC, Canada
+            </span>
+          </div>
+          <div class="bottom_section">
+            <span><i class="fas fa-calendar"></i> 2024 – 2026</span> <!-- edit -->
+            <span><i class="fas fa-star"></i> GPA: <strong>8 / 9</strong></span> <!-- edit -->
+          </div>
+        </section>
+
+        <section>
+          <div class="section_title"><i class="fas fa-user-graduate"></i> Bachelor of Science, Computer Science</div>
+          <div class="about_section">
+            <span class="project-highlight" style="display:block;">
+            York University, Toronto, ON, Canada
+            </span>
+          </div>
+          <div class="bottom_section">
+            <span><i class="fas fa-calendar"></i> 2021 – 2024</span> <!-- edit -->
+            <span><i class="fas fa-star"></i> GPA: <strong>8 / 9</strong></span> <!-- edit -->
+            <span><i class="fas fa-trophy"></i> Award: Dean’s Honour Roll, 2024</span> <!-- edit -->
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Contact/Footer view -->
+    <section id="view-contact" data-route="contact" style="display:none">
+      <h1>Contact</h1>
+      <div id="footer">
+        <h2>
+        <i class="fas fa-phone"></i> &nbsp; <a>437-243-2927</a>
+        <br><br><i class="fas fa-envelope"></i> &nbsp; <a href="mailto:shangenchendd@outlook.com">shangenchendd@outlook.com</a>
+        <br><br><i class="fab fa-github"></i> &nbsp; <a href="https://github.com/LoveYourself999" target="_blank">https://github.com/LoveYourself999</a>
+        <br><br><i class="fab fa-linkedin-in"></i> &nbsp; <a href="https://www.linkedin.com/in/shangen-chen/" target="_blank">www.linkedin.com/in/shangen-chen/</a>
+        </h2>
+    </div>
+    </section>
+
+  </div>
+
+  <!-- MagicGrid + Tiny Router -->
+  <script>
+    // Magic grids (projects + experience + education)
+    const magicProjectsGrid = new MagicGrid({
+      container: "#work_section",
+      animate: false,
+      gutter: 30,
+      static: true,
+      useMin: false,
+      maxColumns: 2,
+      useTransform: true
+    });
+    const magicExperienceGrid = new MagicGrid({
+      container: "#experience_section",
+      animate: false,
+      gutter: 30,
+      static: true,
+      useMin: false,
+      maxColumns: 2,
+      useTransform: true
+    });
+    const magicEducationGrid = new MagicGrid({
+      container: "#education_section",
+      animate: false,
+      gutter: 30,
+      static: true,
+      useMin: false,
+      maxColumns: 2,
+      useTransform: true
+    });
+
+    $(document).ready(() => {
+      magicProjectsGrid.listen();
+      magicExperienceGrid.listen();
+      magicEducationGrid.listen();
+    });
+
+    // Simple hash router: #projects (default), #experience, #education, #contact
+    (function () {
+      const views = {
+        projects: document.querySelector('#view-projects'),
+        experience: document.querySelector('#view-experience'),
+        education: document.querySelector('#view-education'),
+        contact: document.querySelector('#view-contact'),
+      };
+      const links = [...document.querySelectorAll('.nav-link')];
+
+      function show(route) {
+        if (!views[route]) route = 'projects';
+        Object.entries(views).forEach(([r, el]) => {
+          el.style.display = (r === route) ? '' : 'none';
+        });
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + route));
+
+        if (route === 'projects') setTimeout(()=> magicProjectsGrid.positionItems(), 30);
+        if (route === 'experience') setTimeout(()=> magicExperienceGrid.positionItems(), 30);
+        if (route === 'education') setTimeout(()=> magicEducationGrid.positionItems(), 30);
+
+        document.getElementById('display').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Handle nav clicks
+      links.forEach(a => {
+        a.addEventListener('click', (e) => {
+          const href = a.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const route = href.slice(1);
+            history.replaceState(null, '', '#' + route);
+            show(route);
+          }
+        });
+      });
+
+      // Back/forward & direct links
+      window.addEventListener('hashchange', () => show(location.hash.replace('#','')));
+      show(location.hash.replace('#','') || 'projects');
+    })();
+  </script>
+
+</body>
+</html>
