@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Mobile address bar color (optional but nice) -->
+<meta name="theme-color" content="#0b1221">
+
 <head>
+  
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>LoveYourself999</title>
+    <!-- Match mobile address bar (optional) -->
+    <meta name="theme-color" content="#0b1221">
 
+    <!-- Instant paint color before CSS/image load -->
+    <style>
+      :root { --initial-bg: #1646af; }   /* <- set your desired initial color here */
+      html, body { background-color: var(--initial-bg); }
+    </style>
   <!-- Icons & Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
@@ -19,6 +30,7 @@
   <!-- Site CSS -->
   <link rel="stylesheet" href="index.css"/>
   <link rel="icon" href="https://avatars.githubusercontent.com/u/54390035?v=4" type="image/png"/>
+  
 </head>
 
 <body>
@@ -194,7 +206,6 @@
     </section>
 
     <!-- Experience view -->
-    <!-- Experience view -->
 <section id="view-experience" data-route="experience" style="display:none">
     <h1>Experience</h1>
     <div class="projects" id="experience_section">
@@ -299,7 +310,7 @@
     const magicProjectsGrid = new MagicGrid({
       container: "#work_section",
       animate: false,
-      gutter: 30,
+      gutter: 10,
       static: true,
       useMin: false,
       maxColumns: 2,
@@ -341,13 +352,13 @@
       const links = [...document.querySelectorAll('.nav-link')];
 
       function show(route) {
-        if (!views[route]) route = 'projects';
+        if (!views[route]) route = 'education';
         Object.entries(views).forEach(([r, el]) => {
           el.style.display = (r === route) ? '' : 'none';
         });
         links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + route));
 
-        if (route === 'projects') setTimeout(()=> magicProjectsGrid.positionItems(), 30);
+        if (route === 'projects') setTimeout(()=> magicProjectsGrid.positionItems(), 10);
         if (route === 'experience') setTimeout(()=> magicExperienceGrid.positionItems(), 30);
         if (route === 'education') setTimeout(()=> magicEducationGrid.positionItems(), 30);
 
@@ -369,7 +380,7 @@
 
       // Back/forward & direct links
       window.addEventListener('hashchange', () => show(location.hash.replace('#','')));
-      show(location.hash.replace('#','') || 'projects');
+      show(location.hash.replace('#','') || 'education');
     })();
   </script>
 

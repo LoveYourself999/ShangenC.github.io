@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
 :root {
-
+  --background-overlay-color: #dcc8f5
+  --initial-bg: #dcc8f5;       /* <- change this to the “original” color you want */
+  --loading-bg: #dcc8f5; 
   --card-bg: rgba(20, 20, 20, 0.95);
   --card-border: rgba(255, 255, 255, 0.08);
   --card-text: #ddd;
@@ -28,23 +30,26 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   color: var(--text-color);
-  background: var(--background-image) center center / var(--bg-size) no-repeat fixed;
+  background: #8ba7e3 var(--background-image) center center / var(--bg-size, cover) no-repeat fixed;  background-color: var(--initial-bg);  /* fallback color before image loads */
   position: relative;
+  background-image: var(--background-image);
+  background-position: center center;
+  background-size: var(--bg-size, cover);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--initial-bg); /* fallback color behind the image */
 }
 
 body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: var(--background-image);
-  z-index: -1;
+  background: var(--background-overlay-color); /* not var(--background-image) */
 }
 
 /* Loading (optional) */
 #loading {
-  width: 100vw; height: 100vh;
-  position: fixed; background: var(--bg-color);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: var(--loading-bg);
   z-index: 999; display: flex; justify-content: center; align-items: center;
 }
 #spinner {
@@ -197,9 +202,9 @@ body::before {
   
 
   .projects { display: block; margin-left: 0; }
-  .projects a { width: 100%; margin-bottom: 3vh; display: block; }
+  .projects a { width: 80%; margin-bottom: 3vh; display: block; }
   .projects section {
-    width: 90% !important;
+    width: 80% !important;
     padding: 4vh 5vw; border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     background: rgba(255, 255, 255, 0.95); color: var(--text-color);
