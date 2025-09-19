@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 
 :root {
-  --background-overlay-color: #dcc8f5
-  --initial-bg: #dcc8f5;       /* <- change this to the “original” color you want */
-  --loading-bg: #dcc8f5; 
+  --background-overlay-color: #a886d1
+  --initial-bg: #a886d1;       /* <- change this to the “original” color you want */
+  --loading-bg: #a886d1; 
   --card-bg: rgba(20, 20, 20, 0.95);
   --card-border: rgba(255, 255, 255, 0.08);
   --card-text: #ddd;
   --background-image: url("https://github.com/LoveYourself999/ShangenC.github.io/blob/main/IMG_9771.jpeg?raw=true");
-  --background-overlay-color: rgb(198, 59, 17);
+  --background-overlay-color: rgb(141, 56, 30);
   --bg-size: cover;           /* try: contain | 120% auto | 100% 100% */
   --profile-bg-size: cover;   /* separate control for the sidebar image */
 
@@ -127,6 +127,7 @@ body::before {
 /* ---------- Main Display (right column) ---------- */
 #display {
   width: 63vw;
+  height: 100vw;
   margin-left: 33vw;        /* reserves space for fixed profile */
   padding: 5vh 3vw;
   box-sizing: border-box;
@@ -140,6 +141,7 @@ body::before {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: #fff;
+
 }
 
 /* Cards */
