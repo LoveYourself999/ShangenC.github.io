@@ -216,7 +216,10 @@ body::before {
   #blogs { columns: 1; }
   #blog_section { margin-top: 5vh; }
   #footer { padding: 4vh 0; font-size: 14px; text-align: center; }
-  body { overflow-x: hidden; background-color: #f4f4f4; }
+  body {
+    overflow-x: hidden;
+    background-color: var(--initial-bg); /* keep the same initial color on mobile */
+  }
 
   .topnav { border-bottom: 1px solid rgba(255,255,255,.12); }
   .topnav-inner {
