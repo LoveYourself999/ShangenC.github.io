@@ -231,8 +231,8 @@ body::before {
   }
 
   /* Brand */
-  .brand img{ width: 22px; height: 22px; display: none;}
-  .brand span { font-size: 14px; }
+  .brand img{ width: 22px; height: 22px; display: none}
+  .brand span { font-size: 14px; display: none}
 
   /* Links row becomes skinny + scrollable if it overflows */
   .nav-links {
