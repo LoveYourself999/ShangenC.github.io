@@ -245,7 +245,7 @@ body::before {
   .nav-links::-webkit-scrollbar { display: none; } /* WebKit */
 
   .nav-link {
-    padding: 5px 5px;
+    padding: 3px 3px;
     font-size: 12px;
     border-radius: 8px;
     line-height: 2;
